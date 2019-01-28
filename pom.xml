@@ -149,5 +149,10 @@
             </plugin>
         </plugins>
     </build>
-
+			<developers>
+				<developer>
+				<name>Lucas Matheus</name>
+				<email>lucas.matheus@yahoo.com.br</email>
+				</developer>
+			</developers>
 </project>
