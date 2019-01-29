@@ -14,23 +14,25 @@ import br.com.caelum.ingresso.model.Sessao;
 
 public class SessaoForm {
 
-	@NotNull
+	
 	private Integer id;
+	
+	@NotNull
+	private Integer salaId;
 
 	@DateTimeFormat(pattern = "HH:mm")
 	@NotNull
 	private LocalTime horario;
 	
-	@NotNull
-	private Integer salaId;
+	
 	
 	@NotNull
 	private Integer filmeId;
 
 	public Sessao toSessao(SalaDao salaDao, FilmeDao filmeDao) {
 
-		Filme filme = filmeDao.findOne(this.filmeId);
-		Sala sala = salaDao.findOne(this.salaId);
+		Filme filme = filmeDao.findOne(filmeId);
+		Sala sala = salaDao.findOne(salaId);
 
 		Sessao sessao = new Sessao(this.horario, filme, sala);
 		return sessao;
@@ -44,20 +46,20 @@ public class SessaoForm {
 		this.id = id;
 	}
 
-	public LocalTime getHorario() {
-		return horario;
-	}
-
-	public void setHorario(LocalTime horario) {
-		this.horario = horario;
-	}
-
 	public Integer getSalaId() {
 		return salaId;
 	}
 
 	public void setSalaId(Integer salaId) {
 		this.salaId = salaId;
+	}
+
+	public LocalTime getHorario() {
+		return horario;
+	}
+
+	public void setHorario(LocalTime horario) {
+		this.horario = horario;
 	}
 
 	public Integer getFilmeId() {
@@ -67,7 +69,4 @@ public class SessaoForm {
 	public void setFilmeId(Integer filmeId) {
 		this.filmeId = filmeId;
 	}
-	
-	
-	
 }

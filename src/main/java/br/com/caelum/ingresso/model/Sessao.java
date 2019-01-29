@@ -12,7 +12,7 @@ public class Sessao {
 	
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	private LocalTime horario;
 	
 	@ManyToOne
@@ -21,11 +21,13 @@ public class Sessao {
 	@ManyToOne
 	private Filme filme;
 	
+
 	/**
 	 * 
 	 * @deprecated hibernate only
 	 */
-	public Sessao() {}
+	
+	public Sessao(){}
 	
 	public Sessao(LocalTime horario, Filme filme, Sala sala) {
 		this.horario = horario;
@@ -45,5 +47,7 @@ public class Sessao {
 		return filme;
 	}
 	
-
+	public Integer getId() {
+		return id;
+	}
 }
