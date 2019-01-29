@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import br.com.caelum.ingresso.model.Sessao;
-
+//criando validação para bloquear duplicação de sessões.
 public class GerenciadorDeSessao {
 	
 	private List<Sessao> sessoesDaSala;
