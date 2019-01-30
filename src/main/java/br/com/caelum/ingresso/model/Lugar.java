@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by nando on 03/03/17.
  */
+// serve para criar tabela
 @Entity
 public class Lugar {
 
