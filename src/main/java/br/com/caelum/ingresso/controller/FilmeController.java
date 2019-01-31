@@ -1,3 +1,4 @@
+// controller cuida do servidor
 package br.com.caelum.ingresso.controller;
 
 import java.util.List;
@@ -102,10 +103,11 @@ public class FilmeController {
     public ModelAndView detalhes(@PathVariable("id") Integer id){
 
         ModelAndView modelAndView = new ModelAndView("filme/detalhe");
-        Filme filme = filmeDao.findOne(id);
-        List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
        
-        Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme);
+        	Filme filme = filmeDao.findOne(id);
+        	List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
+       
+        Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
         
         
         modelAndView.addObject("sessoes",sessoes);

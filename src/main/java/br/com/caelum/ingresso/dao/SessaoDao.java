@@ -1,3 +1,4 @@
+// Dao cuida do banco de dados.
 package br.com.caelum.ingresso.dao;
 
 import java.util.List;
